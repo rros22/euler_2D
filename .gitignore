@@ -1,4 +1,6 @@
 results/
+bin/
+obj/
 video_frames/
 .vscode/
 .DS_Store
