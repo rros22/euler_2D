@@ -1,6 +1,6 @@
+build/
 results/
-bin/
-obj/
-video_frames/
+*.mp4
 .vscode/
 .DS_Store
+__pycache__/
