@@ -3,6 +3,7 @@
 //
 // Run "euler_2D --help" for the options. The program builds a case (src/cases), advances it to the
 // end time and writes binary frames at regular simulation times for tools/render.
+// Options are documented in docs/options.md; keep usage() and the docs in sync (checked by make test).
 #define _POSIX_C_SOURCE 200112L
 #include <stdio.h>
 #include <stdlib.h>

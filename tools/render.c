@@ -1,6 +1,7 @@
 // Render snapshot frames (frame_*.snap) to an H.264 video by piping raw RGB frames into ffmpeg.
 // Pass 1 finds a global colour range over all frames, pass 2 composes the boxes into one image per frame.
 // Run "render --help" for the options; a single frame can also be written as a PPM image (--still).
+// Documented in docs/options.md and docs/output-and-rendering.md; keep usage() and the docs in sync.
 #define _POSIX_C_SOURCE 200809L
 #include <dirent.h>
 #include <math.h>
@@ -48,7 +49,8 @@ static void usage(const char *prog)
             "  --preset=NAME         x264 preset (default slow)\n"
             "  --ffmpeg=PATH         ffmpeg executable (default ffmpeg)\n"
             "  --still=N             write frame N as a PPM image to -o instead of a video\n"
-            "  -o FILE               output (default DIR/<field>.mp4)\n",
+            "  -o FILE               output (default DIR/<field>.mp4)\n"
+            "  --help                show this message\n",
             prog);
 }
 

@@ -49,8 +49,11 @@ struct Box
     struct BoundaryCondition boundaries[4]; // L, R, B, T
 };
 
-// Allocation / deallocation
+// Allocate a box of nx x ny interior cells: all values zero, all edges reflective walls.
+// Returns NULL after printing an error if allocation fails. The caller frees it with box_destroy.
 struct Box *box_create(int nx, int ny);
+
+// Free a box and its arrays; NULL is allowed. Boxes connected to it keep a dangling neighbor pointer.
 void box_destroy(struct Box *b);
 
 // Array alignment, page rounding and inter-array skew in bytes (see box_create)

@@ -1,7 +1,9 @@
 // Problem setups ("cases"). A case builds the boxes of the domain, sets their boundary conditions
 // and initial data, and records where each box sits in a global cell grid (used for output and
 // rendering only). To add a case: write a setup function like the ones below (see step.c for a
-// short example), declare it here and add it to the table in cases.c.
+// short example), declare it here and add it to the table in cases.c. Step by step: docs/new-case.md.
+//
+// All quantities are dimensionless (reference density, pressure and length); see docs/index.md.
 #ifndef CASES_H
 #define CASES_H
 
@@ -37,6 +39,7 @@ void case_connect(struct Box *a, int edge_a, struct Box *b, int edge_b);
 // Last step of every case: compute the conserved variables from the primitive initial data
 void case_finish(struct Case *c);
 
+// Free all boxes of the case and clear it; safe on a partly built case
 void case_destroy(struct Case *c);
 
 // The cases. base sets the resolution; its meaning is case specific (see each file).

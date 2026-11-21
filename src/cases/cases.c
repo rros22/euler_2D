@@ -1,4 +1,5 @@
-// Case registry and the helpers shared by all case setups
+// Case registry and the helpers shared by all case setups.
+// Every case in CASES[] needs a section in docs/cases.md (checked by make test).
 #include "cases/cases.h"
 #include <string.h>
 

@@ -1,6 +1,6 @@
 # Targets:
 #   make                 solver (build/bin/euler_2D) and renderer (build/bin/render)
-#   make test            build and run all tests (regression, physics, snapshot I/O, render smoke test)
+#   make test            build and run all tests (regression, physics, snapshot I/O, render smoke test, docs)
 #   make benches         build the benchmarks; make bench also runs them
 #   make clean           delete build/
 #   make clean-results   delete results/ and *.mp4 in the top directory
@@ -81,6 +81,7 @@ test: $(TESTS) $(TARGET) $(TOOLS)
 	@$(BIN_DIR)/test_physics
 	@$(BIN_DIR)/test_io $(BUILD)
 	@sh tests/render_smoke.sh $(BIN_DIR) $(BUILD)
+	@sh tests/check_docs.sh $(BIN_DIR)
 
 bench: $(BENCHES)
 	@set -e; for b in $(BENCHES); do $$b; done
